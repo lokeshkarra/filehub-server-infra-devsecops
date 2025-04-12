@@ -1,55 +1,71 @@
-# Python dependencies
-/venv/
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-eggs-info/
-lib/
-lib64/
-parts/
-sdist/
-var/
-.wheel/
-.installed.cfg
-.mypy_cache/
-.pytest_cache/
-filemanager.egg-info/
-/media/user_files/*
-/media/profile_photo/*
-accounts/migrations/*
+*.sqlite3
+*.log
+*.pot
+*.pyc
+
+# Virtual env
+venv/
+env/
+ENV/
 
 
 
-# Environment variables
+# Django
+*.secret
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Secrets
+filehub-secrets-plain.yaml
+*.pem
+*.key
+*.crt
+sealed-filehub-secrets.yaml
 .env
-.env.local
-.env.*.local
-k8s/secrets.yaml
+.env.*
+secretes.yaml
 
+# Docker
+*.tar
+*.bak
+.dockerignore
+.docker/
 
+# Kubernetes
+*.sealed.yaml
 
+# Jenkins
+jenkins_home/
+*.log
 
-# Temporary files
-*.tmp
-*.temp
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.crash
+terraform.tfvars
+override.tf
+override.tf.json
+*.backup
+
+# System
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.swp
 *.swo
 
-# IDE specific files
-.vscode/
-.idea/
-*.iml
+# Logs
+*.log
+logs/
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-
-
+# Misc
+*.bak
+*.old
+*.orig

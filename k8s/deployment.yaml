@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filehub-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: filehub
+  template:
+    metadata:
+      labels:
+        app: filehub
+    spec:
+      containers:
+        - name: filehub
+          image: lokeshkarra/filehub-backend:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DJANGO_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DJANGO_SECRET_KEY
+
+            - name: DJANGO_DEBUG
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DJANGO_DEBUG
+
+            - name: DJANGO_ALLOWED_HOSTS
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DJANGO_ALLOWED_HOSTS
+
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DB_NAME
+
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DB_USER
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DB_PASSWORD
+
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DB_HOST
+
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: DB_PORT
+
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: AWS_ACCESS_KEY_ID
+
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: AWS_SECRET_ACCESS_KEY
+
+            - name: EMAIL_HOST_USER
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: EMAIL_HOST_USER
+
+            - name: EMAIL_HOST_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: filehub-secrets
+                  key: EMAIL_HOST_PASSWORD
