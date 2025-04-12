@@ -5,6 +5,14 @@ A scalable, secure, and production-ready **Django backend** for a file managemen
 
 ---
 
+## Architecture
+
+
+<img src="https://github.com/lokeshkarra/filehub-server-infra-devsecops/blob/main/architecture-diagram/architecture.png" width="800"/>
+
+
+---
+
 ## 🚀 Tech Stack
 
 | Layer         | Tech Used                                      |
@@ -168,8 +176,8 @@ Use the following tools for testing:
 - [x] Docker & Kubernetes deployment
 - [x] Argo CD GitOps
 - [x] Jenkins CI Pipeline
-- [x] Prometheus + Grafana monitoring
 - [x] SealedSecrets for secure secrets
+- [ ] Prometheus + Grafana monitoring
 - [ ] Unit and integration tests
 - [ ] Advanced S3 permission hardening
 
