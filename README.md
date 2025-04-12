@@ -1,7 +1,4 @@
 
-
----
-
 # 📁 FileHub Server - Cloud-Native Django Backend
 
 A scalable, secure, and production-ready **Django backend** for a file management platform — built with modern DevSecOps principles using **Kubernetes, Jenkins, Argo CD, Terraform, AWS, Prometheus, and Grafana**.
@@ -98,6 +95,28 @@ argocd app create filehub-backend \
 
 ---
 
+## 🔐 Secure Secrets with SealedSecrets
+
+All sensitive environment variables and Django secrets are stored using **SealedSecrets**, ensuring Kubernetes secrets are encrypted and Git-safe.
+
+- Replace `k8s/secrets.yaml` with `k8s/sealed-secret.yaml`
+- Sealed using `kubeseal` and Bitnami SealedSecrets controller
+- Automatically decrypted and mounted at runtime in cluster
+
+### 🔑 How to seal a secret:
+
+```bash
+kubectl create secret generic django-secret \
+  --from-literal=SECRET_KEY='your-secret-key' \
+  --dry-run=client -o yaml > secret.yaml
+
+kubeseal --controller-name=sealed-secrets \
+  --controller-namespace=kube-system \
+  -o yaml < secret.yaml > sealed-secret.yaml
+```
+
+---
+
 ## 📊 Monitoring
 
 - Prometheus scrapes Django metrics via `/metrics` endpoint
@@ -141,6 +160,7 @@ Use the following tools for testing:
 - [x] Argo CD GitOps
 - [x] Jenkins CI Pipeline
 - [x] Prometheus + Grafana monitoring
+- [x] SealedSecrets for secure secrets
 - [ ] Unit and integration tests
 - [ ] Advanced S3 permission hardening
 
@@ -164,8 +184,7 @@ Use the following tools for testing:
 │   └── backend/
 │       ├── Dockerfile
 │       └── Django Server Code...
-│        iam/
-├── jenkinspi-peline/
+├── jenkins-pipeline/
 │   └── jenkinsfile-backend
 ├── terraform/
 │   ├── main.tf
@@ -176,17 +195,12 @@ Use the following tools for testing:
 │   └── iam/
 └──  k8s/
     ├── deployment.yaml
-    └── service.yaml
-
+    ├── service.yaml
+    ├── sealed-secret.yaml   <-- 🔐 Sealed Secret
 ```
-
-
-
 
 ---
 
 ## 📜 License
 
 [Apache 2.0](https://github.com/lokeshkarra/filehub-server-infra-devsecops?tab=Apache-2.0-1-ov-file)
-```
-
