@@ -52,6 +52,15 @@ PostgreSQL (RDS)                 AWS S3 (Static files)
 
 ---
 
+## ⚙️ Frontend Repo 
+
+
+[https://github.com/lokeshkarra/filehub-client.git](https://github.com/lokeshkarra/filehub-client.git)
+
+
+
+---
+
 ## ⚙️ Infrastructure as Code (IaC)
 
 Infrastructure is provisioned using **Terraform**:
