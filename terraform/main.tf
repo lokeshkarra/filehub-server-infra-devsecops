@@ -1,5 +1,7 @@
 
 /*
+# Eks configuration
+
 module "vpc" {
   source             = "./vpc"
   vpc_name           = "filehub-vpc"
