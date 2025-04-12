@@ -7,9 +7,9 @@ A scalable, secure, and production-ready **Django backend** for a file managemen
 
 ## Architecture
 
-<img src="https://github.com/lokeshkarra/filehub-server-infra-devsecops/blob/main/architecture-diagram/server-hld.png" width="800"/>
+<img src="https://github.com/lokeshkarra/filehub-server-infra-devsecops/blob/main/architecture-diagram/server-hld.png" height="500"/>
 
-<img src="https://github.com/lokeshkarra/filehub-server-infra-devsecops/blob/main/architecture-diagram/architecture.png" width="800"/>
+<img src="https://github.com/lokeshkarra/filehub-server-infra-devsecops/blob/main/architecture-diagram/architecture.png" width="600"/>
 
 
 ---
