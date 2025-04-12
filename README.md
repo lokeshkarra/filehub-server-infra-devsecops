@@ -192,6 +192,7 @@ Use the following tools for testing:
 │   ├── outputs.tf
 │   ├── vpc/
 │   ├── eks/
+│   ├── ec2/      
 │   └── iam/
 └──  k8s/
     ├── deployment.yaml
@@ -204,3 +205,5 @@ Use the following tools for testing:
 ## 📜 License
 
 [Apache 2.0](https://github.com/lokeshkarra/filehub-server-infra-devsecops?tab=Apache-2.0-1-ov-file)
+```
+
