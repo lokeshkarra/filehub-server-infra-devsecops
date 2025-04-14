@@ -164,10 +164,10 @@ path('', include('django_prometheus.urls'))
 
 ## 🧪 API Testing
 
-Use the following tools for testing:
+Refer the following Link
+[Github repo](https://github.com/lokeshkarra/filehub-server/blob/main/README.md#authentication)
 
-- Postman collection (`/docs/postman_collection.json`)
-- Swagger (optional via DRF extensions)
+
 
 ---
 
