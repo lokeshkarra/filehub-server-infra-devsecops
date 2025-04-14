@@ -1,5 +1,5 @@
 
-/*
+
 # Eks configuration
 
 module "vpc" {
@@ -27,7 +27,10 @@ module "eks" {
 
   
 
-}  */
+}  
+
+/*
+# block if you want to deploy EC2 instances
 
 variable "key_pair_name" {
   description = "EC2 key pair name"
@@ -54,4 +57,4 @@ module "ec2" {
   subnet_id         = module.vpc.public_subnets[0]
   vpc_id            = module.vpc.vpc_id
   iam_role_name     = module.iam.ec2_role_name
-}
+} */

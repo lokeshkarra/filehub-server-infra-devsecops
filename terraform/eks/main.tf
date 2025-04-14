@@ -1,4 +1,4 @@
-/*
+
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
@@ -20,12 +20,12 @@ module "eks" {
 
   eks_managed_node_groups = {
     default = {
-      instance_types = ["t3.medium"]   # ✅ x86_64 instance
+      instance_types = ["t3.medium"]   #  x86_64 instance
       desired_size   = 1
       max_size       = 1
       min_size       = 1
       capacity_type  = "SPOT"
-      ami_type       = "AL2_x86_64"   # ✅ Compatible AMI
+      ami_type       = "AL2_x86_64"   #  Compatible AMI
     }
   }
   cluster_endpoint_public_access  = true
@@ -35,4 +35,3 @@ module "eks" {
     Environment = "dev"
   }
 }
-*/
